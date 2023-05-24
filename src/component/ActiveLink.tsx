@@ -6,9 +6,9 @@ import { useSelectedLayoutSegment } from "next/navigation";
 import { cn } from "tailwind-variants";
 
 type Props = {
+  href: __next_route_internal_types__.RouteImpl<string>;
   segment: string;
   activeClassName: string;
-  href: __next_route_internal_types__.RouteImpl<string>;
 } & LinkRestProps;
 
 export function ActiveLink({ children, className, segment, activeClassName, ...linkProps }: Props) {

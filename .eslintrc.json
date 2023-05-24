@@ -7,7 +7,7 @@
     "prettier",
     "plugin:tailwindcss/recommended"
   ],
-  "plugins": ["tailwindcss", "unused-imports"],
+  "plugins": ["sort-keys-custom-order", "tailwindcss", "unused-imports"],
   "rules": {
     "curly": ["error"],
     "prefer-const": ["error"],
@@ -18,7 +18,15 @@
     "react/destructuring-assignment": ["error", "always"],
     "unused-imports/no-unused-imports": ["error"],
     "@typescript-eslint/consistent-type-imports": ["warn", { "fixStyle": "inline-type-imports" }],
-    "@next/next/no-img-element": "off"
+    "@next/next/no-img-element": "off",
+    "sort-keys-custom-order/type-keys": [
+      "error",
+      { "orderedKeys": ["children", "className", "id", "type", "href", "segment", "name", "title"] }
+    ],
+    "sort-keys-custom-order/object-keys": [
+      "error",
+      { "orderedKeys": ["children", "className", "id", "type", "href", "segment", "name", "title"] }
+    ]
   },
   "settings": {
     "tailwindcss": { "callees": ["cn"], "config": "tailwind.config.mjs" },

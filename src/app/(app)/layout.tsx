@@ -31,7 +31,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <nav className="sticky top-full sm:pl-2 sm:pr-4">
         <div className="hidden sm:my-4 sm:block">ロゴ</div>
         <div className="flex gap-y-2 border-t sm:flex-col sm:border-none">
-          {items.map(({ href, icon, text, segment }) => {
+          {items.map(({ href, segment, icon, text }) => {
             return (
               <ActiveLink
                 key={href}

@@ -48,6 +48,9 @@ devDependencies:
   eslint-config-prettier:
     specifier: ^8.8.0
     version: 8.8.0(eslint@8.41.0)
+  eslint-plugin-sort-keys-custom-order:
+    specifier: ^1.0.5
+    version: 1.0.5(eslint@8.41.0)
   eslint-plugin-tailwindcss:
     specifier: ^3.12.0
     version: 3.12.0(tailwindcss@3.3.2)
@@ -1418,6 +1421,15 @@ packages:
       resolve: 2.0.0-next.4
       semver: 6.3.0
       string.prototype.matchall: 4.0.8
+    dev: true
+
+  /eslint-plugin-sort-keys-custom-order@1.0.5(eslint@8.41.0):
+    resolution: {integrity: sha512-WdZjCY/nyOjr4GnMvQTiH225sQ0+LvmoZBB7cPkSvhbx7FxKCk3pwn8UTKquSdSRsvPiM2qoUvIOPDAEdOJdkA==}
+    engines: {node: '>=0.10.0'}
+    peerDependencies:
+      eslint: ^8.28.0
+    dependencies:
+      eslint: 8.41.0
     dev: true
 
   /eslint-plugin-tailwindcss@3.12.0(tailwindcss@3.3.2):
