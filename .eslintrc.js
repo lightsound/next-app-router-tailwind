@@ -1,5 +1,7 @@
+const srcTsFiles = ["src/**/*.ts", "src/**/*.tsx"];
+
 // https://nextjs.org/docs/app/api-reference/file-conventions
-const nextFileConventions = [
+const nextConventionFiles = [
   "src/app/**/default.tsx",
   "src/app/**/error.tsx",
   "src/app/**/layout.tsx",
@@ -21,20 +23,19 @@ module.exports = {
     "prettier",
     "plugin:tailwindcss/recommended",
   ],
-  plugins: ["sort-keys-custom-order", "tailwindcss", "unused-imports"],
+  plugins: ["sort-keys-custom-order", "unused-imports"],
   rules: {
     curly: ["error"],
     "prefer-const": ["error"],
     "prefer-arrow-callback": ["error"],
     "arrow-body-style": ["error", "always"],
     "func-style": ["error", "declaration"],
-    "react/destructuring-assignment": ["error", "always"],
+    "@typescript-eslint/no-var-requires": ["off"],
     "unused-imports/no-unused-imports": ["error"],
-    "@typescript-eslint/consistent-type-imports": ["warn", { fixStyle: "inline-type-imports" }],
-    "@next/next/no-img-element": "off",
+    "@typescript-eslint/consistent-type-imports": ["error", { fixStyle: "inline-type-imports" }],
   },
   settings: {
-    tailwindcss: { callees: ["cn"], config: "tailwind.config.mjs" },
+    tailwindcss: { callees: ["cn"], config: "tailwind.config.js" },
     next: { rootDir: true },
   },
   overrides: [
@@ -43,16 +44,19 @@ module.exports = {
       parser: "@typescript-eslint/parser",
     },
     {
-      files: ["src/**/*.ts", "src/**/*.tsx"],
-      rules: { "import/no-default-export": "error" },
-      excludedFiles: nextFileConventions,
-    },
-    {
-      files: ["src/**/*.ts", "src/**/*.tsx"],
+      files: srcTsFiles,
       rules: {
+        "@typescript-eslint/no-var-requires": ["error"],
+        "react/destructuring-assignment": ["error", "always"],
+        "@next/next/no-img-element": "off",
         "sort-keys-custom-order/type-keys": ["error", { orderedKeys }],
         "sort-keys-custom-order/object-keys": ["error", { orderedKeys }],
       },
+    },
+    {
+      files: srcTsFiles,
+      rules: { "import/no-default-export": "error" },
+      excludedFiles: nextConventionFiles,
     },
   ],
 };
