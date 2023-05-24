@@ -1,7 +1,7 @@
 /** @type {import('prettier').Config} */
 module.exports = {
   // prettier
-  printWidth: 120,
+  printWidth: 100,
 
   // @ianvs/prettier-plugin-sort-imports
   plugins: ["@ianvs/prettier-plugin-sort-imports"],

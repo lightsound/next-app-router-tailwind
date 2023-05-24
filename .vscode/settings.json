@@ -7,9 +7,8 @@
   "editor.quickSuggestions": { "strings": true },
   "files.encoding": "utf8",
   "files.eol": "\n",
-  "tailwindCSS.experimental.classRegex": [
-    ["tv\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
-  ],
+  "tailwindCSS.experimental.classRegex": [["tv\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]],
+  "tailwindCSS.classAttributes": ["class", "className", "activeClassName"],
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "typescript.preferences.importModuleSpecifier": "non-relative",
   "typescript.tsdk": "node_modules/.pnpm/typescript@5.0.4/node_modules/typescript/lib",
