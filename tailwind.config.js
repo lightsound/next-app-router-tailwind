@@ -14,7 +14,11 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-radix-colors"), require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-radix-colors"),
+    require("tailwindcss-animate"),
+    require("@tailwindcss/forms"),
+  ],
 };
 
 module.exports = withTV(config);

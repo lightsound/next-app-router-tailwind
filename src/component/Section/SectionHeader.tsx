@@ -1,0 +1,13 @@
+export type SectionHeaderProps = {
+  title: React.ReactNode;
+  right?: React.ReactNode;
+};
+
+export function SectionHeader({ title, right }: SectionHeaderProps) {
+  return (
+    <div className="flex items-center justify-between px-4 font-bold">
+      <div className="text-mauve-normal text-xl">{title}</div>
+      {right ? <div className="text-mauve-dim">{right}</div> : null}
+    </div>
+  );
+}
