@@ -1,17 +1,16 @@
 import Link from "next/link";
 
 import { ScrollArea, ScrollBar } from "@/component/Scroll";
-import { SEARCH_QUERY_KEY, SearchBar } from "@/component/SearchBar";
 import { Section } from "@/component/Section";
+import { SEARCH_QUERY_KEY } from "@/const";
 
-type Props = {
-  searchParams: { [SEARCH_QUERY_KEY]: string | string[] | undefined };
-};
+type Props = { searchParams: { [SEARCH_QUERY_KEY]: string | string[] | undefined } };
 
-export default function Search({ searchParams }: Props) {
-  const search = searchParams[SEARCH_QUERY_KEY];
+export default function Discovery({ searchParams }: Props) {
+  const param = searchParams[SEARCH_QUERY_KEY];
+  const query = decodeURIComponent(param ? param.toString() : "");
 
-  return <SearchBar>{search ? search : <Main />}</SearchBar>;
+  return <div>{query ? query : <Main />}</div>;
 }
 
 function Main() {
@@ -36,7 +35,7 @@ function Main() {
         title="話題のレシピ"
         right={
           <Link
-            href="/"
+            href="/search/recipe"
             className="outline-none focus:ring-2 focus:ring-mauve-7 dark:focus:ring-mauvedark-7 sm:hover:underline"
           >
             もっと見る
@@ -61,7 +60,7 @@ function Main() {
         title="シェフ"
         right={
           <Link
-            href="/"
+            href="/search/chef"
             className="outline-none focus:ring-2 focus:ring-mauve-7 dark:focus:ring-mauvedark-7 sm:hover:underline"
           >
             もっと見る
