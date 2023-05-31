@@ -24,7 +24,7 @@ export function Tab({ items }: Props) {
               {...rest}
               shallow
               className={cn(
-                "text-mauve-normal flex-1 border-b-2 py-2 text-center",
+                "text-mauve-normal flex-1 border-b-2 py-2 text-center outline-none focus-visible:bg-mauve-ui",
                 isActive
                   ? "border-mauve-12 font-bold dark:border-mauvedark-12"
                   : "border-transparent",
