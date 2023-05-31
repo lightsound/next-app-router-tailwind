@@ -2,13 +2,14 @@ import { SectionHeader, type SectionHeaderProps } from "./SectionHeader";
 
 type SectionProps = SectionHeaderProps & {
   children: React.ReactNode;
+  noPadding?: boolean;
 };
 
-export function Section({ children, ...headerProps }: SectionProps) {
+export function Section({ children, noPadding, ...headerProps }: SectionProps) {
   return (
-    <div className="space-y-2">
+    <div className="space-y-3">
       <SectionHeader {...headerProps} />
-      {children}
+      <div className={noPadding ? undefined : "px-4"}>{children}</div>
     </div>
   );
 }

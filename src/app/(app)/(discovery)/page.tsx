@@ -16,13 +16,13 @@ export default function Discovery({ searchParams }: Props) {
 function Main() {
   return (
     <div className="space-y-12 py-5">
-      <Section title="注目のシェフ">
+      <Section noPadding title="注目のシェフ">
         <ScrollArea>
           <div className="flex gap-x-4 px-4">
             {[1, 2, 3, 4, 5].map((v) => {
               return (
                 <div key={v}>
-                  <div className="h-60 w-40 bg-amber-4"></div>
+                  <div className="h-60 w-40 bg-amber-3"></div>
                 </div>
               );
             })}
@@ -32,6 +32,7 @@ function Main() {
       </Section>
 
       <Section
+        noPadding
         title="話題のレシピ"
         right={
           <Link
@@ -47,7 +48,7 @@ function Main() {
             {[1, 2, 3, 4, 5].map((v) => {
               return (
                 <div key={v}>
-                  <div className="h-40 w-40 bg-amber-4"></div>
+                  <div className="h-40 w-40 bg-amber-3"></div>
                 </div>
               );
             })}
@@ -67,11 +68,11 @@ function Main() {
           </Link>
         }
       >
-        <div className="space-y-4 px-4">
+        <div className="space-y-4">
           {[1, 2, 3, 4, 5].map((v) => {
             return (
               <div key={v}>
-                <div className="h-36 w-24 bg-amber-4"></div>
+                <div className="h-36 w-24 bg-amber-3"></div>
               </div>
             );
           })}
