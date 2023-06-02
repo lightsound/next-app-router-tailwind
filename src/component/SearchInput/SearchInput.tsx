@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useTransition, type ChangeEvent } from "react";
+import { type Route } from "next";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
@@ -21,16 +22,17 @@ export function SearchInput() {
   const reset = useCallback(() => {
     startTransition(async () => {
       await sleep(200);
+      ref.current?.focus();
       const params = new URLSearchParams(window.location.search);
       params.delete(SEARCH_QUERY_KEY);
-      replace(pathname as Parameters<typeof replace>[0]);
+      replace(pathname as Route);
     });
   }, [pathname, replace]);
 
   const handleSearch = useCallback(
     (e: ChangeEvent<HTMLInputElement>) => {
       startTransition(async () => {
-        await sleep(1200);
+        await sleep(1000);
         const params = new URLSearchParams(window.location.search);
         if (e.target.value) {
           params.set(SEARCH_QUERY_KEY, encodeURIComponent(e.target.value));
@@ -38,7 +40,7 @@ export function SearchInput() {
           params.delete(SEARCH_QUERY_KEY);
         }
         const path = pathname === "/" ? "/search/recipe" : pathname;
-        replace(`${path}?${params.toString()}` as Parameters<typeof replace>[0]);
+        replace(`${path}?${params.toString()}` as Route);
       });
     },
     [pathname, replace]

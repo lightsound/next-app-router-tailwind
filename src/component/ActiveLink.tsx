@@ -1,15 +1,14 @@
 "use client";
 
-import Link, { type LinkRestProps } from "next/link";
+import Link, { type LinkProps } from "next/link";
 import { useSelectedLayoutSegment } from "next/navigation";
 
 import { cn } from "tailwind-variants";
 
-type Props = {
-  href: __next_route_internal_types__.RouteImpl<string>;
+type Props = LinkProps<string> & {
   segment: string;
   activeClassName: string;
-} & LinkRestProps;
+};
 
 export function ActiveLink({ children, className, segment, activeClassName, ...linkProps }: Props) {
   const selectedLayoutSegment = useSelectedLayoutSegment();

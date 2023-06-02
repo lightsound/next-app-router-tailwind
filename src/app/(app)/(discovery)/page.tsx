@@ -1,5 +1,8 @@
+import { type Route } from "next";
 import Link from "next/link";
 
+import { ChefDetailCard, ChefLargeCard } from "@/component/ChefCard";
+import { RecipeCard } from "@/component/RecipeCard";
 import { ScrollArea, ScrollBar } from "@/component/Scroll";
 import { Section } from "@/component/Section";
 import { SEARCH_QUERY_KEY } from "@/const";
@@ -20,11 +23,7 @@ function Main() {
         <ScrollArea>
           <div className="flex gap-x-4 px-4">
             {[1, 2, 3, 4, 5].map((v) => {
-              return (
-                <div key={v}>
-                  <div className="h-60 w-40 bg-amber-3"></div>
-                </div>
-              );
+              return <ChefLargeCard key={v} href={`/chef/${v}` as Route} />;
             })}
           </div>
           <ScrollBar orientation="horizontal" className="h-0" />
@@ -44,13 +43,9 @@ function Main() {
         }
       >
         <ScrollArea>
-          <div className="flex gap-x-4 px-4">
+          <div className="flex h-32 gap-x-4 px-4">
             {[1, 2, 3, 4, 5].map((v) => {
-              return (
-                <div key={v}>
-                  <div className="h-40 w-40 bg-amber-3"></div>
-                </div>
-              );
+              return <RecipeCard key={v} href={`/recipe/${v}` as Route} />;
             })}
           </div>
           <ScrollBar orientation="horizontal" className="h-0" />
@@ -70,11 +65,7 @@ function Main() {
       >
         <div className="space-y-4">
           {[1, 2, 3, 4, 5].map((v) => {
-            return (
-              <div key={v}>
-                <div className="h-36 w-24 bg-amber-3"></div>
-              </div>
-            );
+            return <ChefDetailCard key={v} href={`/chef/${v}` as Route} />;
           })}
         </div>
       </Section>

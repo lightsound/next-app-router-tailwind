@@ -1,3 +1,6 @@
+import { type Route } from "next";
+
+import { RecipeCard } from "@/component/RecipeCard";
 import { Section } from "@/component/Section";
 import { SEARCH_QUERY_KEY } from "@/const";
 
@@ -12,7 +15,7 @@ export default function SearchRecipe({ searchParams }: Props) {
         <Section title="話題のレシピ">
           <div className="grid grid-cols-2 gap-4">
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((v) => {
-              return <div key={v} className="aspect-square bg-amber-3"></div>;
+              return <RecipeCard key={v} href={`/recipe/${v}` as Route} />;
             })}
           </div>
         </Section>
@@ -27,7 +30,7 @@ export default function SearchRecipe({ searchParams }: Props) {
       <Section title={`「${query}」で検索`}>
         <div className="grid grid-cols-2 gap-4">
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((v) => {
-            return <div key={v} className="aspect-square bg-amber-3"></div>;
+            return <RecipeCard key={v} href={`/recipe/${v}` as Route} />;
           })}
         </div>
       </Section>

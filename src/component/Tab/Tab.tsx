@@ -1,5 +1,6 @@
 "use client";
 
+import { type Route } from "next";
 import Link, { type LinkProps } from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 
@@ -20,7 +21,7 @@ export function Tab({ items }: Props) {
           return (
             <Link
               key={href.toString()}
-              href={`${href}?${query}` as LinkProps<string>["href"]}
+              href={`${href}${query ? `?${query}` : ""}` as Route}
               {...rest}
               shallow
               className={cn(

@@ -1,3 +1,6 @@
+import { type Route } from "next";
+
+import { ChefDetailCard } from "@/component/ChefCard";
 import { Section } from "@/component/Section";
 import { SEARCH_QUERY_KEY } from "@/const";
 
@@ -12,11 +15,7 @@ export default function SearchChef({ searchParams }: Props) {
         <Section title="シェフ一覧">
           <div className="space-y-4">
             {[1, 2, 3, 4, 5].map((v) => {
-              return (
-                <div key={v}>
-                  <div className="h-36 w-24 bg-amber-3"></div>
-                </div>
-              );
+              return <ChefDetailCard key={v} href={`/chef/${v}` as Route} />;
             })}
           </div>
         </Section>
@@ -31,11 +30,7 @@ export default function SearchChef({ searchParams }: Props) {
       <Section title={`「${query}」で検索`}>
         <div className="space-y-4">
           {[1, 2, 3, 4, 5].map((v) => {
-            return (
-              <div key={v}>
-                <div className="h-36 w-24 bg-amber-3"></div>
-              </div>
-            );
+            return <ChefDetailCard key={v} href={`/chef/${v}` as Route} />;
           })}
         </div>
       </Section>
