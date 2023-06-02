@@ -2,7 +2,13 @@ import { IconHeart, IconSearch, IconShoppingCart } from "@tabler/icons-react";
 
 import { ActiveLink } from "@/component/ActiveLink";
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export function AppLayout({
+  children,
+  hasBottomNav = false,
+}: {
+  children: React.ReactNode;
+  hasBottomNav?: boolean;
+}) {
   const items = [
     {
       href: "/",
@@ -26,7 +32,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="mx-auto flex min-h-screen flex-col-reverse sm:max-w-2xl sm:flex-row sm:gap-x-4 sm:px-4">
-      <nav id="nav" className="sticky bottom-0 sm:bottom-auto sm:top-0 sm:self-start">
+      <nav
+        id="nav"
+        className={`sticky sm:bottom-auto sm:top-0 sm:self-start ${
+          hasBottomNav ? "bottom-0" : "hidden sm:block"
+        }`}
+      >
         <div className="hidden sm:my-4 sm:block">ロゴ</div>
         <div className="border-mauve-dim flex border-t sm:flex-col sm:border-none">
           {items.map(({ href, segment, icon, text }) => {

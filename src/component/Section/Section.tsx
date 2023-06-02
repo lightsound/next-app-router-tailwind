@@ -7,7 +7,7 @@ type SectionProps = SectionHeaderProps & {
 
 export function Section({ children, noPadding, ...headerProps }: SectionProps) {
   return (
-    <div className="space-y-3">
+    <div className="space-y-2">
       <SectionHeader {...headerProps} />
       <div className={noPadding ? undefined : "px-4"}>{children}</div>
     </div>

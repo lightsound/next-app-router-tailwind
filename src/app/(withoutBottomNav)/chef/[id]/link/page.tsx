@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function ChefLink({ params }: { params: { id: string } }) {
+export default function ChefLink({}: { params: { id: string } }) {
   const items = [
     {
       type: "sns",

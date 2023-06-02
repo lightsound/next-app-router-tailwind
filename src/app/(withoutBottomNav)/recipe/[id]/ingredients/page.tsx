@@ -1,8 +1,10 @@
 import { IconShoppingCartPlus } from "@tabler/icons-react";
 
+import { IngredientItem } from "@/component/IngredientItem/IngredientItem";
+import { List } from "@/component/List";
 import { Section } from "@/component/Section";
 
-export default function RecipeIngredients({ params }: { params: { id: string } }) {
+export default function RecipeIngredients({}: { params: { id: string } }) {
   const items = [
     { main: "キャベツ", sub: "5〜6枚" },
     { main: "キャベツ", sub: "5〜6枚" },
@@ -23,23 +25,21 @@ export default function RecipeIngredients({ params }: { params: { id: string } }
         }
         noPadding
       >
-        <hr className="border-mauve-dim" />
-        {items.map((item) => {
-          return (
-            <div
-              key={item.main}
-              className="border-mauve-dim flex items-center justify-between gap-x-2 border-b px-4 py-2"
-            >
-              <div>
-                <div className="text-mauve-normal leading-snug">{item.main}</div>
-                <div className="text-mauve-dim text-sm">{item.sub}</div>
-              </div>
-              <button className="bg-mauve-ghost -mr-1 rounded-full p-2">
-                <IconShoppingCartPlus className="text-mauve-dim h-5 w-5" stroke={1.5} />
-              </button>
-            </div>
-          );
-        })}
+        <List>
+          {items.map((item) => {
+            return (
+              <IngredientItem
+                key={item.main}
+                {...item}
+                right={
+                  <button className="bg-mauve-ghost -mr-1 rounded-full p-2">
+                    <IconShoppingCartPlus className="text-mauve-dim h-5 w-5" stroke={1.5} />
+                  </button>
+                }
+              />
+            );
+          })}
+        </List>
       </Section>
     </div>
   );

@@ -7,7 +7,7 @@ export function SectionHeader({ title, right }: SectionHeaderProps) {
   return (
     <div className="flex items-end justify-between px-4 font-bold">
       <div className="text-mauve-normal text-xl">{title}</div>
-      {right ? <div className="text-mauve-dim">{right}</div> : null}
+      {right ? <div className="text-mauve-dim contents">{right}</div> : null}
     </div>
   );
 }
