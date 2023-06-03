@@ -7,13 +7,13 @@ type IngredientItemProps = {
 
 export function IngredientItem({ left, main, right, sub }: IngredientItemProps) {
   return (
-    <div className="flex items-center gap-x-4 px-4 py-2">
-      <div className="shrink-0">{left}</div>
+    <div className={`flex items-center gap-x-2 px-4 ${sub ? "py-2" : "py-3"}`}>
+      {left ? <div className="shrink-0">{left}</div> : null}
       <div className="mr-auto">
         <div className="text-mauve-normal leading-snug">{main}</div>
         {sub ? <div className="text-mauve-dim text-sm">{sub}</div> : null}
       </div>
-      <div className="shrink-0">{right}</div>
+      {right ? <div className="shrink-0">{right}</div> : null}
     </div>
   );
 }

@@ -31,7 +31,7 @@ export function AppLayout({
   ] as const;
 
   return (
-    <div className="mx-auto flex min-h-screen flex-col-reverse sm:max-w-2xl sm:flex-row sm:gap-x-4 sm:px-4">
+    <div className="mx-auto flex min-h-screen flex-col-reverse sm:max-w-2xl sm:flex-row sm:gap-x-3 sm:px-4 sm:pl-6">
       <nav
         id="nav"
         className={`sticky sm:bottom-auto sm:top-0 sm:self-start ${

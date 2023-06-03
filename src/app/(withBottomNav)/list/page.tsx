@@ -20,8 +20,6 @@ function Main() {
     { isDone: false, main: "キャベツ" },
     { isDone: false, main: "キャベツ", sub: "5〜6枚" },
     { isDone: true, main: "キャベツ", sub: "5〜6枚" },
-    { isDone: false, main: "キャベツ", sub: "5〜6枚" },
-    { isDone: true, main: "キャベツ", sub: "5〜6枚" },
   ] as const;
 
   return (
@@ -38,7 +36,16 @@ function Main() {
         <ItemList>
           {items.map(({ isDone, ...item }) => {
             return (
-              <IngredientItem key={item.main} {...item} left={<Radio initialState={isDone} />} />
+              <IngredientItem
+                key={item.main}
+                {...item}
+                left={<Radio initialState={isDone} />}
+                right={
+                  <button className="text-tomato-dim -mr-1 px-1 py-0.5 sm:hover:underline">
+                    削除
+                  </button>
+                }
+              />
             );
           })}
         </ItemList>
