@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 import { tv } from "tailwind-variants";
 
@@ -20,8 +20,12 @@ const button = tv({
 export function FavButton({ type }: { type: "chef" | "recipe" }) {
   const [isFav, setIsFav] = useState(false);
 
-  const favText = type === "chef" ? "フォロー中" : "お気に入りから削除";
-  const noFavText = type === "chef" ? "フォローする" : "お気に入りに追加";
+  const { favText, noFavText } = useMemo(() => {
+    return {
+      favText: type === "chef" ? "フォロー中" : "お気に入りから削除",
+      noFavText: type === "chef" ? "フォローする" : "お気に入りに追加",
+    };
+  }, [type]);
 
   function handleClick() {
     return setIsFav(!isFav);
