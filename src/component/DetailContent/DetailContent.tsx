@@ -5,6 +5,8 @@ import { IconDotsVertical } from "@tabler/icons-react";
 
 import { Tab } from "@/component/Tab";
 
+import { FavButton } from "./FavButton";
+
 type CommonProps = {
   children: React.ReactNode;
   id: string;
@@ -58,15 +60,13 @@ export function DetailContent({
 
         {description ? <p>{description}</p> : null}
 
-        <div className="flex items-center gap-x-5">
+        <div className="flex items-center gap-x-4">
           {rest.type === "chef" ? <Count count={rest.recipeCount} suffix="レシピ" /> : null}
           <Count count={favCount} suffix={rest.type === "chef" ? "フォロワー" : "お気に入り"} />
           {rest.type === "recipe" ? <Chef id={rest.chef.id} name={rest.chef.name} /> : null}
         </div>
 
-        <button className="bg-tomato-solid rounded-md px-4 py-1.5 text-sm">
-          {rest.type === "chef" ? "フォロー" : "お気に入りに追加"}
-        </button>
+        <FavButton type={rest.type} />
       </div>
 
       <Tab items={items} />
@@ -78,7 +78,7 @@ export function DetailContent({
 
 function Count({ count, suffix }: { count: number; suffix: string }) {
   return (
-    <div>
+    <div className="text-sm">
       <span className="mr-0.5 font-bold">{count.toLocaleString()}</span>
       <span>{suffix}</span>
     </div>
@@ -87,8 +87,8 @@ function Count({ count, suffix }: { count: number; suffix: string }) {
 
 function Chef({ id, name }: { id: string; name: string }) {
   return (
-    <Link href={`/chef/${id}`} className="group flex items-center gap-x-1">
-      <div className="h-6 w-6 rounded-full bg-tomato-3" />
+    <Link href={`/chef/${id}`} className="group flex items-center gap-x-1 text-sm">
+      <div className="h-5 w-5 rounded-full bg-tomato-3" />
       <div className="sm:group-hover:underline">{name}</div>
     </Link>
   );

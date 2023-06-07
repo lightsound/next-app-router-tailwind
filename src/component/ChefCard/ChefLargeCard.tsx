@@ -7,7 +7,7 @@ type ChefLargeCardProps = LinkProps<string> & {
 export function ChefLargeCard({ ...linkProps }: ChefLargeCardProps) {
   return (
     <Link {...linkProps}>
-      <div className="h-60 w-40 bg-tomato-3"></div>
+      <div className="h-52 w-40 bg-tomato-3"></div>
     </Link>
   );
 }

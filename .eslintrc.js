@@ -12,7 +12,22 @@ const nextConventionFiles = [
   "src/app/**/template.tsx",
 ];
 
-const orderedKeys = ["children", "className", "id", "type", "href", "segment", "name", "title"];
+const orderedKeys = [
+  "children",
+  "className",
+  "id",
+  "type",
+  "href",
+  "segment",
+  "name",
+  "title",
+  "true",
+  "false",
+  "base",
+  "variants",
+  "compoundVariants",
+  "defaultVariants",
+];
 
 module.exports = {
   $schema: "https://json.schemastore.org/eslintrc",
