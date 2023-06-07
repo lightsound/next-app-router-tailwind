@@ -1,37 +1,18 @@
-import { type Route } from "next";
+import { DetailContent } from "@/component/DetailContent";
 
-import { Tab } from "@/component/Tab";
+export default function Layout(props: { children: React.ReactNode; params: { id: string } }) {
+  const { children, params } = props;
 
-export default function Layout({
-  children,
-  params,
-}: {
-  children: React.ReactNode;
-  params: { id: string };
-}) {
   return (
-    <div>
-      <div className="aspect-square bg-tomato-3" />
-
-      <div className="space-y-3 p-4">
-        <h1 className="text-2xl font-bold">レシピ {params.id}</h1>
-        <p>
-          吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
-        </p>
-        <div>
-          <span className="mr-0.5 font-bold">1,234</span>
-          <span>お気に入り</span>
-        </div>
-      </div>
-
-      <Tab
-        items={[
-          { children: "作り方", href: `/recipe/${params.id}` as Route },
-          { children: "材料", href: `/recipe/${params.id}/ingredients` as Route },
-        ]}
-      />
-
+    <DetailContent
+      id={params.id}
+      type="recipe"
+      name={`レシピ ${params.id}`}
+      description="吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。"
+      favCount={1234}
+      chef={{ id: "1", name: "しまぶーシェフ" }}
+    >
       {children}
-    </div>
+    </DetailContent>
   );
 }

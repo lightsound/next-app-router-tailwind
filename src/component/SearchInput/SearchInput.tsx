@@ -59,7 +59,7 @@ export function SearchInput() {
           href="/"
           className="-ml-1 mr-1 flex shrink-0 items-center rounded-lg px-2 outline-none ring-inset focus-visible:ring-2 focus-visible:ring-mauve-7 dark:focus-visible:ring-mauvedark-7"
         >
-          <IconArrowLeft className="text-mauve-dim h-5 w-5" aria-hidden="true" />
+          <IconArrowLeft className="h-5 w-5" aria-hidden="true" />
         </Link>
       ) : null}
 
@@ -81,14 +81,14 @@ export function SearchInput() {
 
         {isPending ? (
           <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3">
-            <IconLoader2 className="text-mauve-dim h-5 w-5 animate-spin" aria-hidden="true" />
+            <IconLoader2 className="h-5 w-5 animate-spin" aria-hidden="true" />
           </div>
         ) : query ? (
           <button
             className="absolute inset-y-0 right-0 flex items-center rounded-lg px-3 outline-none ring-inset focus-visible:ring-2 focus-visible:ring-mauve-7 dark:focus-visible:ring-mauvedark-7"
             onClick={reset}
           >
-            <IconX className="text-mauve-dim h-5 w-5" aria-hidden="true" />
+            <IconX className="h-5 w-5" aria-hidden="true" />
           </button>
         ) : null}
       </div>

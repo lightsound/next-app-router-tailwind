@@ -19,7 +19,7 @@ export default function RecipeIngredients({}: { params: { id: string } }) {
       <Section
         title={`2人前`}
         right={
-          <button className="outline-none focus:ring-2 focus:ring-mauve-7 dark:focus:ring-mauvedark-7 sm:hover:underline">
+          <button className="outline-none focus-visible:ring-2 focus-visible:ring-mauve-7 dark:focus-visible:ring-mauvedark-7 sm:hover:underline">
             まとめてお買い物に追加
           </button>
         }

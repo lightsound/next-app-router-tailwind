@@ -24,6 +24,7 @@ export function Tab({ items }: Props) {
               href={`${href}${query ? `?${query}` : ""}` as Route}
               {...rest}
               shallow
+              replace
               className={cn(
                 "text-mauve-normal flex-1 border-b-2 py-2 text-center outline-none focus-visible:bg-mauve-ui",
                 isActive

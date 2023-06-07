@@ -36,7 +36,7 @@ function Main() {
         right={
           <Link
             href="/search/recipe"
-            className="outline-none focus:ring-2 focus:ring-mauve-7 dark:focus:ring-mauvedark-7 sm:hover:underline"
+            className="outline-none focus-visible:ring-2 focus-visible:ring-mauve-7 dark:focus-visible:ring-mauvedark-7 sm:hover:underline"
           >
             もっと見る
           </Link>
@@ -57,7 +57,7 @@ function Main() {
         right={
           <Link
             href="/search/chef"
-            className="outline-none focus:ring-2 focus:ring-mauve-7 dark:focus:ring-mauvedark-7 sm:hover:underline"
+            className="outline-none focus-visible:ring-2 focus-visible:ring-mauve-7 dark:focus-visible:ring-mauvedark-7 sm:hover:underline"
           >
             もっと見る
           </Link>
