@@ -7,6 +7,9 @@ import { List } from "@/component/List";
 import { Radio } from "@/component/Radio";
 import { Section } from "@/component/Section";
 
+import { AddButton } from "./AddButton";
+import { RemoveButton } from "./RemoveButton";
+
 type Props = {
   items: (ComponentProps<typeof IngredientItem> & { isDone: boolean })[];
 };
@@ -17,9 +20,9 @@ export function MyShoppingList({ items }: Props) {
       noPadding
       title="じぶんメモ"
       right={
-        <button className="-mb-0.5 -mr-0.5 p-1">
+        <AddButton>
           <IconPlus className="h-5 w-5" />
-        </button>
+        </AddButton>
       }
     >
       <List>
@@ -29,11 +32,7 @@ export function MyShoppingList({ items }: Props) {
               key={item.main}
               {...item}
               left={<Radio initialState={isDone} />}
-              right={
-                <button className="text-tomato-dim -mr-1 px-1 py-0.5 text-sm sm:hover:underline">
-                  削除
-                </button>
-              }
+              right={<RemoveButton>削除</RemoveButton>}
             />
           );
         })}
