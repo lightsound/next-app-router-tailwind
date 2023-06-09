@@ -1,4 +1,6 @@
-import { IconCopy, IconLock, IconLockOpen, IconPencil, IconTrash } from "@tabler/icons-react";
+import Link from "next/link";
+
+import { IconLock, IconLockOpen, IconPencil, IconTrash } from "@tabler/icons-react";
 
 import {
   DropdownMenuGroup,
@@ -6,20 +8,25 @@ import {
   DropdownMenuSeparator,
 } from "@/component/DropdownMenu";
 
+import { MenuItemCopy } from "./MenuAction";
 import { MenuContainer } from "./MenuContainer";
 
-export function MenuMyRecipe() {
+export function MenuMyRecipe({ id }: { id: string }) {
   return (
     <MenuContainer>
       <DropdownMenuGroup>
-        <DropdownMenuItem>
-          <IconPencil className="mr-2 h-4 w-4" />
-          <span>編集する</span>
+        <DropdownMenuItem asChild>
+          <Link href={`/recipe/${id}/edit`}>
+            <IconPencil className="mr-2 h-4 w-4" />
+            <span>編集する</span>
+          </Link>
         </DropdownMenuItem>
+
         <DropdownMenuItem>
           <IconLock className="mr-2 h-4 w-4" />
           <span>公開を停止する</span>
         </DropdownMenuItem>
+
         <DropdownMenuItem className="items-start">
           <IconLockOpen className="mr-2 mt-px h-4 w-4" />
           <div className="flex flex-col">
@@ -27,10 +34,8 @@ export function MenuMyRecipe() {
             <span className="mt-px text-xs">URLを知っているユーザーのみ閲覧可能</span>
           </div>
         </DropdownMenuItem>
-        <DropdownMenuItem>
-          <IconCopy className="mr-2 h-4 w-4" />
-          <span>URLをコピー</span>
-        </DropdownMenuItem>
+
+        <MenuItemCopy />
       </DropdownMenuGroup>
 
       <div className="p-2 text-xs">

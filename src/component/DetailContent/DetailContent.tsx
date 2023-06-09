@@ -53,8 +53,8 @@ export function DetailContent({
 
       <div className="space-y-3 p-4">
         <div className="flex items-start justify-between gap-x-1">
-          <h1 className="line-clamp-2 text-2xl font-bold">{name}</h1>
-          <Menu type={isMyRecipe ? "myRecipe" : rest.type} />
+          <h1 className="line-clamp-2 text-xl font-bold">{name}</h1>
+          <Menu type={isMyRecipe ? "myRecipe" : rest.type} id={id} />
         </div>
 
         {description ? <p>{description}</p> : null}

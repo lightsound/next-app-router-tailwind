@@ -26,7 +26,7 @@ export default function FavMy() {
             return <RecipeCard key={v} href={`/recipe/2` as Route} />;
           })}
           <Link
-            href="/fav"
+            href="/recipe/new"
             className="border-mauve-dim text-mauve-dim grid aspect-square place-content-center gap-y-1 border"
           >
             <span>新規追加</span>
