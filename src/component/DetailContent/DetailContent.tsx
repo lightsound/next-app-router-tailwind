@@ -1,11 +1,10 @@
 import { type Route } from "next";
 import Link from "next/link";
 
-import { IconDotsVertical } from "@tabler/icons-react";
-
 import { Tab } from "@/component/Tab";
 
 import { FavButton } from "./FavButton";
+import { Menu } from "./Menu";
 
 type CommonProps = {
   children: React.ReactNode;
@@ -35,6 +34,8 @@ export function DetailContent({
   favCount,
   ...rest
 }: DetailContentProps) {
+  const isMyRecipe = id === "2";
+
   const items =
     rest.type === "chef"
       ? [
@@ -53,9 +54,7 @@ export function DetailContent({
       <div className="space-y-3 p-4">
         <div className="flex items-start justify-between gap-x-1">
           <h1 className="line-clamp-2 text-2xl font-bold">{name}</h1>
-          <button className="-mr-0.5 p-1.5">
-            <IconDotsVertical className="h-5 w-5" stroke={1.5} />
-          </button>
+          <Menu type={isMyRecipe ? "myRecipe" : rest.type} />
         </div>
 
         {description ? <p>{description}</p> : null}
@@ -66,7 +65,7 @@ export function DetailContent({
           <Count count={favCount} suffix={rest.type === "chef" ? "フォロワー" : "お気に入り"} />
         </div>
 
-        <FavButton type={rest.type} />
+        {isMyRecipe ? null : <FavButton type={rest.type} />}
       </div>
 
       <Tab items={items} />
@@ -90,9 +89,12 @@ function Chef({ id, name }: { id: string; name: string }) {
 
   if (isMyRecipe) {
     return (
-      <div className="border-tomato-dim rounded border bg-tomato-2 px-2 text-xs text-tomato-11 dark:bg-tomatodark-2 dark:text-tomatodark-11">
+      <Link
+        href="/fav/my"
+        className="border-tomato-dim rounded border bg-tomato-2 px-2 text-xs text-tomato-11 dark:bg-tomatodark-2 dark:text-tomatodark-11"
+      >
         マイレシピ
-      </div>
+      </Link>
     );
   }
 

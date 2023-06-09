@@ -8,7 +8,7 @@ export default function Fav() {
   return (
     <div className="space-y-12">
       <Section
-        title="シェフのレシピ"
+        title="お気に入りレシピ"
         right={
           <Link
             href="/fav/my"
