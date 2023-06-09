@@ -8,7 +8,7 @@ export default function Fav() {
   return (
     <div className="space-y-12">
       <Section
-        title="シェフレシピ"
+        title="シェフのレシピ"
         right={
           <Link
             href="/fav/my"
@@ -21,7 +21,7 @@ export default function Fav() {
       >
         <div className="grid grid-cols-2 gap-4">
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((v) => {
-            return <RecipeCard key={v} href={`/recipe/${v}` as Route} />;
+            return <RecipeCard key={v} href={`/recipe/1` as Route} />;
           })}
         </div>
       </Section>

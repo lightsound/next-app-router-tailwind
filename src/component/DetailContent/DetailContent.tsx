@@ -62,8 +62,8 @@ export function DetailContent({
 
         <div className="flex items-center gap-x-4">
           {rest.type === "chef" ? <Count count={rest.recipeCount} suffix="レシピ" /> : null}
-          <Count count={favCount} suffix={rest.type === "chef" ? "フォロワー" : "お気に入り"} />
           {rest.type === "recipe" ? <Chef id={rest.chef.id} name={rest.chef.name} /> : null}
+          <Count count={favCount} suffix={rest.type === "chef" ? "フォロワー" : "お気に入り"} />
         </div>
 
         <FavButton type={rest.type} />
@@ -86,9 +86,19 @@ function Count({ count, suffix }: { count: number; suffix: string }) {
 }
 
 function Chef({ id, name }: { id: string; name: string }) {
+  const isMyRecipe = id === "2";
+
+  if (isMyRecipe) {
+    return (
+      <div className="border-tomato-dim rounded border bg-tomato-2 px-2 text-xs text-tomato-11 dark:bg-tomatodark-2 dark:text-tomatodark-11">
+        マイレシピ
+      </div>
+    );
+  }
+
   return (
     <Link href={`/chef/${id}`} className="group flex items-center gap-x-1 text-sm">
-      <div className="h-5 w-5 rounded-full bg-tomato-3" />
+      <div className="h-5 w-5 rounded-full bg-tomato-5" />
       <div className="sm:group-hover:underline">{name}</div>
     </Link>
   );

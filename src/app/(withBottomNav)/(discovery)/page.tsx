@@ -45,7 +45,7 @@ function Main() {
         <ScrollArea>
           <div className="flex h-32 gap-x-4 px-4">
             {[1, 2, 3, 4, 5].map((v) => {
-              return <RecipeCard key={v} href={`/recipe/${v}` as Route} />;
+              return <RecipeCard key={v} href={`/recipe/1` as Route} />;
             })}
           </div>
           <ScrollBar orientation="horizontal" className="h-0" />

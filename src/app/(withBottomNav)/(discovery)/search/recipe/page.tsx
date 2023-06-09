@@ -15,7 +15,7 @@ export default function SearchRecipe({ searchParams }: Props) {
         <Section title="話題のレシピ">
           <div className="grid grid-cols-2 gap-4">
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((v) => {
-              return <RecipeCard key={v} href={`/recipe/${v}` as Route} />;
+              return <RecipeCard key={v} href={`/recipe/1` as Route} />;
             })}
           </div>
         </Section>
@@ -30,7 +30,7 @@ export default function SearchRecipe({ searchParams }: Props) {
       <Section title={`「${query}」で検索`}>
         <div className="grid grid-cols-2 gap-4">
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((v) => {
-            return <RecipeCard key={v} href={`/recipe/${v}` as Route} />;
+            return <RecipeCard key={v} href={`/recipe/1` as Route} />;
           })}
         </div>
       </Section>
