@@ -17,7 +17,7 @@ export default function FavMy() {
             replace
             className="outline-none focus-visible:ring-2 focus-visible:ring-mauve-7 dark:focus-visible:ring-mauvedark-7 sm:hover:underline"
           >
-            お気に入りレシピに戻る
+            お気に入りレシピをみる
           </Link>
         }
       >

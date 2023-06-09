@@ -34,8 +34,8 @@ export function AppLayout({
     <div className="mx-auto flex min-h-screen flex-col-reverse sm:max-w-2xl sm:flex-row sm:gap-x-3 sm:px-4 sm:pl-6">
       <nav
         id="nav"
-        className={`sticky sm:bottom-auto sm:top-0 sm:self-start ${
-          hasBottomNav ? "bottom-0" : "hidden sm:block"
+        className={`sm:sticky sm:top-0 sm:self-start ${
+          hasBottomNav ? "fixed bottom-0 z-50 w-full sm:bottom-auto sm:w-auto" : "hidden sm:block"
         }`}
       >
         <div className="hidden sm:my-4 sm:block">ロゴ</div>
@@ -59,7 +59,13 @@ export function AppLayout({
         </div>
       </nav>
 
-      <main className="border-mauve-dim flex-1 overflow-hidden pb-5 sm:border-x">{children}</main>
+      <main
+        className={`border-mauve-dim flex-1 overflow-hidden sm:border-x ${
+          hasBottomNav ? "pb-20 sm:pb-16" : "pb-16"
+        }`}
+      >
+        {children}
+      </main>
     </div>
   );
 }

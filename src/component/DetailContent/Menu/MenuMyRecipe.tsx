@@ -27,11 +27,16 @@ export function MenuMyRecipe() {
             <span className="mt-px text-xs">URLを知っているユーザーのみ閲覧可能</span>
           </div>
         </DropdownMenuItem>
-        <DropdownMenuItem disabled>
+        <DropdownMenuItem>
           <IconCopy className="mr-2 h-4 w-4" />
           <span>URLをコピー</span>
         </DropdownMenuItem>
       </DropdownMenuGroup>
+
+      <div className="p-2 text-xs">
+        ※
+        公開に関して、公開中は下の2つのメニューを非表示にし、非公開中は「公開を停止する」を非表示にする
+      </div>
 
       <DropdownMenuSeparator />
 
