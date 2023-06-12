@@ -8,6 +8,7 @@ module.exports = {
   importOrder: [
     "^(react/(.*)$)|^(react$)",
     "^(next/(.*)$)|^(next$)",
+    "^@vercel/(.*)$",
     "",
     "<THIRD_PARTY_MODULES>",
     "",

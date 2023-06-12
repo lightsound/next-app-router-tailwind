@@ -1,6 +1,6 @@
 import { MyShoppingList, RecipeShoppingList } from "@/component/ShoppingList";
 
-export default function List() {
+export default function ListAuthenticated() {
   const items = [
     { isDone: true, main: "キャベツ", sub: "5〜6枚" },
     { isDone: false, main: "キャベツ" },

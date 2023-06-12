@@ -4,7 +4,7 @@ import Link from "next/link";
 import { RecipeCard } from "@/component/RecipeCard";
 import { Section } from "@/component/Section";
 
-export default function Fav() {
+export default function FavAuthenticated() {
   return (
     <div className="space-y-12">
       <Section
