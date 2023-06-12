@@ -5,8 +5,6 @@ import { revalidatePath as revalidate } from "next/cache";
 import { redirect } from "next/navigation";
 import { kv } from "@vercel/kv";
 
-export type AuthActionArgs = { redirectPath?: Route; revalidatePath: Route };
-
 const KEY = "name";
 
 export async function getUser() {
@@ -14,7 +12,9 @@ export async function getUser() {
   return user;
 }
 
-export async function handleSignIn({ redirectPath, revalidatePath }: AuthActionArgs) {
+export type SignInArgs = { redirectPath?: Route; revalidatePath: Route };
+
+export async function handleSignIn({ redirectPath, revalidatePath }: SignInArgs) {
   await kv.set(KEY, { name: "しまぶー" });
   revalidate(revalidatePath);
 
@@ -23,9 +23,14 @@ export async function handleSignIn({ redirectPath, revalidatePath }: AuthActionA
   }
 }
 
-export async function handleSignOut({ redirectPath, revalidatePath }: AuthActionArgs) {
+export type SignOutArgs = { redirectPath?: Route; revalidatePath?: Route };
+
+export async function handleSignOut({ redirectPath, revalidatePath }: SignOutArgs) {
   await kv.del(KEY);
-  revalidate(revalidatePath);
+
+  if (revalidatePath) {
+    revalidate(revalidatePath);
+  }
 
   if (redirectPath) {
     redirect(redirectPath);

@@ -2,18 +2,12 @@ import Link from "next/link";
 
 import { IconSettings } from "@tabler/icons-react";
 
-import { getUser } from "@/component/Auth";
+import { getUser, RequiredSignInScreen } from "@/component/Auth";
 import { TopBar } from "@/component/TopBar";
 
 import { AuthenticatedContainer } from "./_AuthenticatedContainer";
 
-export default async function Layout({
-  authenticated,
-  unauthenticated,
-}: {
-  authenticated: React.ReactNode;
-  unauthenticated: React.ReactNode;
-}) {
+export default async function Layout({ children }: { children: React.ReactNode }) {
   const user = await getUser();
 
   return (
@@ -28,7 +22,11 @@ export default async function Layout({
         </Link>
       }
     >
-      {user ? <AuthenticatedContainer>{authenticated}</AuthenticatedContainer> : unauthenticated}
+      {user ? (
+        <AuthenticatedContainer>{children}</AuthenticatedContainer>
+      ) : (
+        <RequiredSignInScreen revalidatePath="/fav" />
+      )}
     </TopBar>
   );
 }

@@ -2,12 +2,9 @@
 
 import { useTransition } from "react";
 
-import { handleSignOut, type AuthActionArgs } from "@/component/Auth/action";
+import { handleSignOut, type SignOutArgs } from "@/component/Auth/action";
 
-export function SignOutButton({
-  children,
-  ...authActionArgs
-}: AuthActionArgs & { children?: React.ReactNode }) {
+export function SignOutButton({ children, ...rest }: SignOutArgs & { children: React.ReactNode }) {
   const [isPending, startTransition] = useTransition();
 
   return (
@@ -15,7 +12,7 @@ export function SignOutButton({
       disabled={isPending}
       onClick={() => {
         startTransition(async () => {
-          await handleSignOut(authActionArgs);
+          await handleSignOut(rest);
         });
       }}
     >
