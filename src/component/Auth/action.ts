@@ -2,20 +2,20 @@
 
 import { type Route } from "next";
 import { revalidatePath as revalidate } from "next/cache";
+import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-import { kv } from "@vercel/kv";
 
 const KEY = "name";
 
 export async function getUser() {
-  const user = await kv.get<{ name: string }>(KEY);
-  return user;
+  const user = cookies().get(KEY);
+  return { name: user?.value };
 }
 
 export type SignInArgs = { redirectPath?: Route; revalidatePath: Route };
 
 export async function handleSignIn({ redirectPath, revalidatePath }: SignInArgs) {
-  await kv.set(KEY, { name: "しまぶー" });
+  cookies().set(KEY, "shimabu");
   revalidate(revalidatePath);
 
   if (redirectPath) {
@@ -26,7 +26,7 @@ export async function handleSignIn({ redirectPath, revalidatePath }: SignInArgs)
 export type SignOutArgs = { redirectPath?: Route; revalidatePath?: Route };
 
 export async function handleSignOut({ redirectPath, revalidatePath }: SignOutArgs) {
-  await kv.del(KEY);
+  cookies().delete(KEY);
 
   if (revalidatePath) {
     revalidate(revalidatePath);

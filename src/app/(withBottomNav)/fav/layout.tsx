@@ -22,7 +22,7 @@ export default async function Layout({ children }: { children: React.ReactNode }
         </Link>
       }
     >
-      {user ? (
+      {user?.name ? (
         <AuthenticatedContainer>{children}</AuthenticatedContainer>
       ) : (
         <RequiredSignInScreen revalidatePath="/fav" />

@@ -1,22 +1,24 @@
 "use client";
 
-import { useTransition } from "react";
+import { useTransition, type ComponentProps } from "react";
 
 import { handleSignIn, type SignInArgs } from "./action";
 
-export function SignInButton({ children, ...rest }: SignInArgs & { children: React.ReactNode }) {
+type SignInButtonProps = SignInArgs & ComponentProps<"button">;
+
+export function SignInButton({ redirectPath, revalidatePath, ...buttonProps }: SignInButtonProps) {
   const [isPending, startTransition] = useTransition();
 
   return (
     <button
+      type="button"
       disabled={isPending}
       onClick={() => {
         startTransition(async () => {
-          await handleSignIn(rest);
+          await handleSignIn({ redirectPath, revalidatePath });
         });
       }}
-    >
-      {children}
-    </button>
+      {...buttonProps}
+    />
   );
 }

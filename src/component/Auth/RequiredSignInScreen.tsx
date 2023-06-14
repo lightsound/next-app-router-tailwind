@@ -13,7 +13,11 @@ export function RequiredSignInScreen({ img = "girl1", ...rest }: RequiredSignInS
   return (
     <div className="p-4 text-center">
       <div className="mx-auto w-1/2">
-        <Image src={img === "girl1" ? girl1 : girl2} alt="Required Sign In" />
+        <Image
+          src={img === "girl1" ? girl1 : girl2}
+          alt="Required Sign In"
+          className="select-none"
+        />
       </div>
 
       <h1 className="mt-2 font-bold">ログインをお願いします</h1>

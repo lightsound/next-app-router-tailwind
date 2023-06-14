@@ -6,7 +6,7 @@ export default async function Layout({ children }: { children: React.ReactNode }
 
   return (
     <TopBar center="買い物リスト">
-      {user ? children : <RequiredSignInScreen img="girl2" revalidatePath="/list" />}
+      {user?.name ? children : <RequiredSignInScreen img="girl2" revalidatePath="/list" />}
     </TopBar>
   );
 }
