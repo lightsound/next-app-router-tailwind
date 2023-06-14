@@ -27,6 +27,8 @@ export function RequiredSignInScreen({ img = "girl1", ...rest }: RequiredSignInS
         <AuthGoogleButton {...rest} />
         <AuthAppleButton {...rest} />
       </div>
+
+      <div className="mt-4 text-xs">↑ cookiesを使ってログインっぽい挙動にしてます ↑</div>
     </div>
   );
 }

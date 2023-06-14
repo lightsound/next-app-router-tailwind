@@ -1,3 +1,5 @@
+import { RecipeStepItem } from "@/component/RecipeStepItem";
+
 export default function Recipe({ params }: { params: { id: string } }) {
   console.log(`レシピID: ${params}のレシピを出す`);
 
@@ -32,18 +34,15 @@ export default function Recipe({ params }: { params: { id: string } }) {
     <div>
       {items.map((item, index) => {
         return (
-          <div
+          <RecipeStepItem
             key={item.main}
-            className="border-mauve-dim flex items-baseline gap-x-2 border-b px-4 py-2"
-          >
-            <div className="bg-tomato-solid grid h-5 w-5 shrink-0 place-items-center rounded-full text-sm">
-              {index + 1}
-            </div>
-            <div className="flex-1 space-y-1">
-              <div className="text-mauve-normal leading-snug">{item.main}</div>
-              <div className="text-mauve-dim text-sm">{item.sub}</div>
-            </div>
-          </div>
+            left={
+              <div className="bg-tomato-solid grid h-5 w-5 shrink-0 place-items-center rounded-full text-sm">
+                {index + 1}
+              </div>
+            }
+            {...item}
+          />
         );
       })}
     </div>
