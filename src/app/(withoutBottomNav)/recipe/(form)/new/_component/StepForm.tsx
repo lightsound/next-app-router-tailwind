@@ -1,6 +1,7 @@
-import { AddButton } from "@/component/FormRecipe";
 import { DraggableRecipeStepItem } from "@/component/RecipeStepItem";
 import { Section } from "@/component/Section";
+
+import { AddButton } from "./AddButton";
 
 export function StepForm() {
   return (

@@ -30,7 +30,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               href="/recipe/draft"
               className="text-mauve-dim p-3 font-bold ring-inset focus-visible:ring-2 focus-visible:ring-mauve-7 dark:focus-visible:ring-mauvedark-7"
             >
-              下書き
+              下書き一覧
             </Link>
             <button
               type="submit"

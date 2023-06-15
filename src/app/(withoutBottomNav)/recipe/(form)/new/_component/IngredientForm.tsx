@@ -1,7 +1,10 @@
 "use client";
 
-import { AddButton, InputDeletable, ServePeopleCounter } from "@/component/FormRecipe";
+import { InputDeletable } from "@/component/FormRecipe";
 import { Section } from "@/component/Section";
+
+import { AddButton } from "./AddButton";
+import { ServePeopleCounter } from "./ServePeopleCounter";
 
 export function IngredientForm() {
   return (

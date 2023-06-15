@@ -1,6 +1,6 @@
 "use client";
 
-import { IconX } from "@tabler/icons-react";
+import { IconTrash } from "@tabler/icons-react";
 
 import { Input, type InputProps } from "./Input";
 
@@ -16,7 +16,7 @@ export function InputDeletable({ ...props }: Omit<InputProps, "right">) {
             alert("TODO: 削除");
           }}
         >
-          <IconX stroke={1.5} className="text-mauve-dim h-4 w-4" />
+          <IconTrash stroke={1.5} className="text-mauve-dim h-4 w-4" />
         </button>
       }
     />

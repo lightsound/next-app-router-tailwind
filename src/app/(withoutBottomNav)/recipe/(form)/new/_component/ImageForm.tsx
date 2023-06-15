@@ -1,7 +1,10 @@
 "use client";
 
-import { AddButton, RecipeImage } from "@/component/FormRecipe";
+import { IconX } from "@tabler/icons-react";
+
 import { Section } from "@/component/Section";
+
+import { AddButton } from "./AddButton";
 
 export function ImageForm() {
   return (
@@ -19,5 +22,19 @@ export function ImageForm() {
         ＋ 画像を追加する
       </AddButton>
     </Section>
+  );
+}
+
+function RecipeImage() {
+  return (
+    <div className="relative">
+      <div className="aspect-square h-32 w-32 bg-tomato-3" />
+      <button
+        type="button"
+        className="bg-tomato-solid absolute -right-1.5 -top-1.5 rounded-full p-1"
+      >
+        <IconX className="h-3 w-3" />
+      </button>
+    </div>
   );
 }
