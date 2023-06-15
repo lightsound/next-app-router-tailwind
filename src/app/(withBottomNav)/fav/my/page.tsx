@@ -22,7 +22,7 @@ export default function FavMy() {
         }
       >
         <div className="grid grid-cols-2 gap-4">
-          {[1, 2, 3, 4, 5].map((v) => {
+          {[1, 2, 3].map((v) => {
             return <RecipeCard key={v} href={`/recipe/2` as Route} />;
           })}
           <Link

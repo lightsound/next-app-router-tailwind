@@ -1,6 +1,9 @@
 import { type Route } from "next";
 import Link from "next/link";
 
+import { IconArrowLeft } from "@tabler/icons-react";
+
+import { BackButton } from "@/component/DetailContent/BackButton";
 import { Tab } from "@/component/Tab";
 
 import { FavButton } from "./FavButton";
@@ -49,7 +52,11 @@ export function DetailContent({
 
   return (
     <div>
-      <div className="aspect-square bg-tomato-3" />
+      <div className="relative aspect-square bg-tomato-3">
+        <BackButton>
+          <IconArrowLeft stroke={1.5} className="h-6 w-6" />
+        </BackButton>
+      </div>
 
       <div className="space-y-3 p-4">
         <div className="flex items-start justify-between gap-x-1">

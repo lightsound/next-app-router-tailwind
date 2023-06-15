@@ -8,7 +8,7 @@ export function RecipeStepItem({
   sub?: string;
 }) {
   return (
-    <div className="border-mauve-dim flex items-baseline gap-x-2 border-b px-4 py-2">
+    <div className="border-mauve-dim flex items-baseline gap-x-2 border-b bg-[#fff] px-4 py-2">
       {left}
       <div className="flex-1 space-y-1">
         <div className="text-mauve-normal leading-snug">{main}</div>
