@@ -7,7 +7,7 @@ import { List } from "@/component/List";
 import { Radio } from "@/component/Radio";
 import { Section } from "@/component/Section";
 
-import { AddButton } from "./AddButton";
+import { AddMemoButton } from "./AddMemoButton";
 import { RemoveButton } from "./RemoveButton";
 
 type Props = {
@@ -20,9 +20,9 @@ export function MyShoppingList({ items }: Props) {
       noPadding
       title="じぶんメモ"
       right={
-        <AddButton>
+        <AddMemoButton>
           <IconPlus className="h-5 w-5" />
-        </AddButton>
+        </AddMemoButton>
       }
     >
       <List>

@@ -1,6 +1,6 @@
 "use client";
 
-export function AddButton({ children }: { children: React.ReactNode }) {
+export function AddMemoButton({ children }: { children: React.ReactNode }) {
   return (
     <button
       className="-mb-0.5 -mr-0.5 p-1"
