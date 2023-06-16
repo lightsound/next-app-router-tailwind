@@ -6,12 +6,12 @@ import { Section } from "@/component/Section";
 
 export default function RecipeIngredients({}: { params: { id: string } }) {
   const items = [
-    { main: "キャベツ", sub: "5〜6枚" },
-    { main: "キャベツ", sub: "5〜6枚" },
-    { main: "キャベツ", sub: "5〜6枚" },
-    { main: "キャベツ", sub: "5〜6枚" },
-    { main: "キャベツ", sub: "5〜6枚" },
-    { main: "キャベツ", sub: "5〜6枚" },
+    { main: "キャベツ" },
+    { main: "キャベツ" },
+    { main: "キャベツ" },
+    { main: "キャベツ" },
+    { main: "キャベツ" },
+    { main: "キャベツ" },
   ] as const;
 
   return (
@@ -19,7 +19,7 @@ export default function RecipeIngredients({}: { params: { id: string } }) {
       <Section
         title={`2人前`}
         right={
-          <button className="outline-none focus-visible:ring-2 focus-visible:ring-mauve-7 dark:focus-visible:ring-mauvedark-7 sm:hover:underline">
+          <button className="outline-none focus-visible:ring-2 focus-visible:ring-mauve-7 dark:focus-visible:ring-mauvedark-7">
             まとめてお買い物に追加
           </button>
         }
@@ -32,7 +32,7 @@ export default function RecipeIngredients({}: { params: { id: string } }) {
                 key={item.main}
                 {...item}
                 right={
-                  <button className="bg-mauve-ghost -mr-1 rounded-full p-2">
+                  <button className="bg-mauve-ghost -mr-2 -my-0.5 rounded-full p-2">
                     <IconShoppingCartPlus className="text-mauve-dim h-5 w-5" stroke={1.5} />
                   </button>
                 }

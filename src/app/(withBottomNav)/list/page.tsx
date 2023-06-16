@@ -2,10 +2,10 @@ import { MyShoppingList, RecipeShoppingList } from "@/component/ShoppingList";
 
 export default function ListAuthenticated() {
   const items = [
-    { isDone: true, main: "キャベツ", sub: "5〜6枚" },
+    { isDone: true, main: "キャベツ" },
     { isDone: false, main: "キャベツ" },
-    { isDone: false, main: "キャベツ", sub: "5〜6枚" },
-    { isDone: true, main: "キャベツ", sub: "5〜6枚" },
+    { isDone: false, main: "キャベツ" },
+    { isDone: true, main: "キャベツ" },
   ];
 
   return (

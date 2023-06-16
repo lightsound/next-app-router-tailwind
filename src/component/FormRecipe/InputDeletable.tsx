@@ -13,7 +13,7 @@ export function InputDeletable({ ...props }: Omit<InputProps, "right">) {
           type="button"
           className="-mr-0.5 cursor-pointer p-0.5"
           onClick={() => {
-            alert("TODO: 削除");
+            alert("TODO: 確認モーダルを出して削除");
           }}
         >
           <IconTrash stroke={1.5} className="text-mauve-dim h-4 w-4" />

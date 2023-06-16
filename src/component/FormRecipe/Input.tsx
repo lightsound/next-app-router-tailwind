@@ -13,7 +13,7 @@ export function Input({ className, right, ...props }: InputProps) {
         type="text"
         autoComplete="off"
         className={cn(
-          "block w-full pl-4 placeholder:text-mauve-9",
+          "block w-full pl-4 placeholder:text-mauve-9 focus:z-10",
           "border-x-0 focus:border-x-0",
           "border-y border-y-mauve-7",
           "focus:border-y-mauve-8 focus-visible:ring-inset focus-visible:ring-mauve-8",
@@ -23,7 +23,7 @@ export function Input({ className, right, ...props }: InputProps) {
         )()}
         {...props}
       />
-      <div className="absolute right-4 flex">{right}</div>
+      <div className="absolute z-20 right-4 flex">{right}</div>
     </div>
   );
 }

@@ -9,7 +9,7 @@ export function Textarea({ className, ...props }: TextareaAutosizeProps) {
       autoComplete="off"
       minRows={2}
       className={cn(
-        "block w-full resize-none px-4 placeholder:text-mauve-9",
+        "block w-full resize-none px-4 placeholder:text-mauve-9 focus:z-10",
         "border-x-0 focus:border-x-0",
         "border-y border-y-mauve-7",
         "focus:border-y-mauve-8 focus-visible:ring-inset focus-visible:ring-mauve-8",
