@@ -10,7 +10,7 @@ export function IngredientForm() {
   return (
     <Section titleComponent={<ServePeopleCounter />} noPadding>
       {[1, 2, 3].map((v) => {
-        return <InputDeletable key={v} name={`foo.${v}`} />;
+        return <InputDeletable key={v} name={`foo[${v}]`} />;
       })}
       <div className="mt-1 px-4">
         <AddButton
