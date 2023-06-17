@@ -23,7 +23,7 @@ export function Input({ className, right, ...props }: InputProps) {
         )()}
         {...props}
       />
-      <div className="absolute z-20 right-4 flex">{right}</div>
+      <div className="absolute right-4 z-20 flex">{right}</div>
     </div>
   );
 }

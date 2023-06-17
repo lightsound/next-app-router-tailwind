@@ -32,7 +32,7 @@ export default function RecipeIngredients({}: { params: { id: string } }) {
                 key={item.main}
                 {...item}
                 right={
-                  <button className="bg-mauve-ghost -mr-2 -my-0.5 rounded-full p-2">
+                  <button className="bg-mauve-ghost -my-0.5 -mr-2 rounded-full p-2">
                     <IconShoppingCartPlus className="text-mauve-dim h-5 w-5" stroke={1.5} />
                   </button>
                 }

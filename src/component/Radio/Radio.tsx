@@ -12,7 +12,7 @@ export function Radio({ initialState = false }: { initialState?: boolean }) {
   }
 
   return (
-    <label className="-ml-3 -mr-1 cursor-pointer flex p-3 -my-2">
+    <label className="-my-2 -ml-3 -mr-1 flex cursor-pointer p-3">
       <input
         type="checkbox"
         checked={checked}

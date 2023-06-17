@@ -13,7 +13,7 @@ const button = tv({
     },
   },
   defaultVariants: {
-    isFav: "false",
+    isFav: false,
   },
 });
 
