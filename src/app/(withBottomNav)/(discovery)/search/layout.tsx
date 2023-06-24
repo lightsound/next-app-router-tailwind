@@ -1,8 +1,10 @@
+import { Suspense } from "react";
+
 import { Tab } from "@/component/Tab";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div>
+    <Suspense>
       <Tab
         items={[
           { children: "レシピ", href: "/search/recipe" },
@@ -10,6 +12,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         ]}
       />
       {children}
-    </div>
+    </Suspense>
   );
 }

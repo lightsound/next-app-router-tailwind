@@ -1,7 +1,3 @@
 export function List({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="border-mauve-dim divide-y divide-mauve-6 border-y dark:divide-mauvedark-6">
-      {children}
-    </div>
-  );
+  return <div className="border-mauve-dim divide-mauve-dim divide-y border-y">{children}</div>;
 }
