@@ -15,7 +15,7 @@ export function TopBar({ children, alignLeft, center, left, right }: Props) {
       <div
         className={cn(
           "border-mauve-dim relative flex h-12 items-center border-b",
-          alignLeft ? null : "justify-between"
+          alignLeft ? null : "justify-between",
         )()}
       >
         <div>{left}</div>

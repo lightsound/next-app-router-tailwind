@@ -17,7 +17,7 @@ export const ScrollBar = React.forwardRef<
         "flex touch-none select-none transition-colors",
         orientation === "vertical" ? "h-full w-2 border-l border-l-transparent p-[1px]" : null,
         orientation === "horizontal" ? "h-2 border-t border-t-transparent p-[1px]" : null,
-        className
+        className,
       )()}
       {...props}
     >

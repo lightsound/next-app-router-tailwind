@@ -30,7 +30,7 @@ export function Tab({ items }: Props) {
                 isActive
                   ? "border-mauve-12 font-bold dark:border-mauvedark-12"
                   : "border-transparent",
-                className
+                className,
               )()}
             />
           );

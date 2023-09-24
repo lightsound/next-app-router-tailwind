@@ -21,7 +21,7 @@ const DropdownMenuContent = React.forwardRef<
         className={cn(
           "bg-mauve-app text-mauve-dim z-50 overflow-hidden rounded-md border border-mauve-6 p-1 shadow-md animate-in dark:border-mauvedark-6",
           "data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
-          className
+          className,
         )()}
         {...props}
       />
@@ -44,7 +44,7 @@ const DropdownMenuItem = React.forwardRef<
         "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
         props.disabled ? "cursor-not-allowed" : "cursor-pointer",
         inset ? "pl-8" : null,
-        className
+        className,
       )()}
       {...props}
     />

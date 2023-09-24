@@ -15,7 +15,7 @@ export function Textarea({ className, ...props }: TextareaAutosizeProps) {
         "focus:border-y-mauve-8 focus-visible:ring-inset focus-visible:ring-mauve-8",
         "dark:bg-mauvedark-2 dark:focus:border-y-mauvedark-8 dark:focus-visible:ring-mauvedark-8",
         "[&+&]:-mt-px",
-        className
+        className,
       )()}
       {...props}
     />

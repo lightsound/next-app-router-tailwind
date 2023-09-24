@@ -19,7 +19,7 @@ export function Input({ className, right, ...props }: InputProps) {
           "focus:border-y-mauve-8 focus-visible:ring-inset focus-visible:ring-mauve-8",
           "dark:bg-mauvedark-2 dark:focus:border-y-mauvedark-8 dark:focus-visible:ring-mauvedark-8",
           right ? "pr-10" : "pr-4",
-          className
+          className,
         )()}
         {...props}
       />

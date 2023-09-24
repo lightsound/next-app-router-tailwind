@@ -43,7 +43,7 @@ export function SearchInput() {
         replace(`${path}?${params.toString()}` as Route);
       });
     },
-    [pathname, replace]
+    [pathname, replace],
   );
 
   useEffect(() => {
